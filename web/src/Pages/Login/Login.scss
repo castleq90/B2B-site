@@ -1,0 +1,55 @@
+@import '../../Styles/_variables.scss';
+
+.allContainer{
+  @include flexSet(row, center, center);
+  min-height: 100vh;
+  .loginContainer{
+    margin: 0 0 60px;
+    header{
+      p{
+        @include flexSet(row, center, center);
+        margin-bottom: 30px;
+        color:#034C8C;
+        font-family: 'Black Ops One', cursive;
+        font-size: 80px;
+      }
+    }
+    main{
+      @include flexSet(row, center, center);
+      flex-direction: column;
+
+      input{
+        width: 300px;
+        height: 40px;
+        padding: 7px;
+        margin-bottom: 20px;
+        border: 1px solid rgb(206, 206, 206);
+        border-radius: 5px;
+      }
+
+      button{
+        border: none;
+        width: 300px;
+        height: 40px;
+        font-size: 17px;
+        border-radius: 15px;
+        background-color:#034C8C;
+        color:white;
+        cursor: pointer;
+
+        &:disabled{
+          background-color: #034c8c57;
+        }
+      }
+    }
+    .signupContainer{
+      @include flexSet(row, center, center);
+      margin-top:40px;
+      .signup{
+        text-decoration: none;
+        color: #034C8C;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import '../../Styles/_variables.scss';
+
+.joinContainer{
+    @include flexSet(row, center, center);
+    min-height: 100vh;
+    .inputContainer{
+        header{
+            .logoText{
+                text-align:center;
+                margin-bottom: 10px;
+                color:#034C8C;
+                font-family: 'Black Ops One', cursive;
+                font-size: 80px;
+            }
+            .joinText{
+                text-align:center;
+                margin: 20px 0;
+                font-size: 30px;
+                font-weight: bold;
+            }
+        }
+        main{
+            p{
+                margin-top:8px;
+                margin-bottom:5px;
+            }
+            input{
+                width: 200px;
+                height: 30px;
+                margin-bottom:5px;
+                padding: 7px;
+            }
+            .textAlert{
+                margin-top:4px;
+                color: red;
+                font-size: 14px;
+            }
+        }
+        .buttonContainer{
+            @include flexSet(row, center, center);
+            button{
+                border:none;
+                border-radius: 15px;
+                width: 200px;
+                height: 40px;
+                margin:20px 0;
+                font-size: 17px;
+                background-color:#034C8C;
+                color:white;
+                cursor:pointer;
+
+            }
+        }
+        .loginLink{
+            text-decoration: none;
+            color: #034C8C;
+            font-weight: bold;
+        }
+    }
+}
