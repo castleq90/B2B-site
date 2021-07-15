@@ -4,3 +4,10 @@
   align-items: $align;
   flex-direction: $flexDirection;
 }
+
+
+@mixin mobile {
+  @media (min-width: 335px) and (max-width: #{758px - 1px}) {
+    @content;
+  }
+}

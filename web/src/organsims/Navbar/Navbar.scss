@@ -82,3 +82,15 @@
     }
   }
 }
+
+@include mobile {
+  .searchContainer{
+    input{
+      display:none;
+    }
+
+    i{
+      display:none;
+    }
+  }
+}
