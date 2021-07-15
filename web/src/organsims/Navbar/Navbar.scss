@@ -1,0 +1,96 @@
+@import '../../Styles/_variables.scss';
+
+.navContainer{
+  width: 100%;
+  height: 50px;
+  background-color: #034C8C;
+  .navWrapper{
+    @include flexSet(row, space-between, center);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px;
+    .mainLogo{
+      margin-top: 5px;
+      color: white;
+      font-size: 40px;
+      font-family: 'Black Ops One', cursive;
+    }
+
+    .searchContainer{
+      position: relative;
+      margin-top: 3px;
+      
+      input{
+        width:250px;
+        height: 25px;
+        border:1px solid #dbdbdb;
+        border-radius: 3px;
+        outline: none;
+
+        &::placeholder {
+          text-align: center;
+          color: #c7c7c7;
+        }
+      }
+
+      i {
+        position: absolute;
+        left: 90px;
+        color: #c7c8c9;
+        font-size: 13px;
+        margin-top: 6px;
+      }
+
+      &:focus-within {
+        input {
+          padding-left: 25px;
+
+          &::placeholder {
+            color: transparent;
+          }
+        }
+        i {
+          left: 8px;
+        }
+      }
+    }
+
+    .sideMenu{
+      @include flexSet(row, space-between, center);
+      width: 160px;
+      margin-top: 6px;
+      
+      span{
+        color:white;
+        font-weight:bold;
+      }
+
+      .logout{
+        margin-top:-2px;
+        color:white;
+        text-decoration: none;
+      }
+
+      i{
+        color:white;
+        margin-top:-4px;
+      }
+
+      .fa-sort-down{
+        margin: 0 0 7px 7px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .searchContainer{
+    input{
+      display:none;
+    }
+
+    i{
+      display:none;
+    }
+  }
+}
