@@ -1,0 +1,74 @@
+@import '../../Styles/_variables.scss';
+
+.calendarContainer{
+  .contactContainer{
+    border-color: #b4b4b4;
+    width:280px;
+    border-right: 1px solid #31333b;
+    z-index:20;
+  }
+
+  .scrollContainer{
+    position:absolute;
+    margin-left:0;
+    left: 287px;
+    right:0;
+    top: 55px;
+    bottom:0;
+    overflow-y:hidden;
+    overflow-x:auto;
+
+    .content{
+      position:absolute;
+      overflow:hidden;
+      top: 0;
+      bottom:0;
+      left: 0;
+      right: 0;
+      min-width: 749px;
+
+      .contentTop{
+        margin: 24px 0;
+
+        i{
+          margin:0 10px;
+        }
+
+        .arrowButton{
+          display:inline-block;
+        }
+  
+        .dateText{
+          display:inline-block;
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        .fas{
+          color:#034C8C;
+        }
+      }
+
+      .calendarBody{
+        display: flex;
+        flex-wrap: wrap;
+
+        .week{
+          display: flex;
+          align-items: center;
+          width: 14.2%;
+          height: 30px;
+          background-color:#f8f8f8;
+        }
+        .day{
+          width: 14.2%;
+          height: 110px;
+          padding:9px;
+          border: 1px solid #e6e6e6;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
+}
