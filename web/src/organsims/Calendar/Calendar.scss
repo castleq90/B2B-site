@@ -1,13 +1,6 @@
 @import '../../Styles/_variables.scss';
 
 .calendarContainer{
-  .contactContainer{
-    border-color: #b4b4b4;
-    width:280px;
-    border-right: 1px solid #31333b;
-    z-index:20;
-  }
-
   .scrollContainer{
     position:absolute;
     margin-left:0;
@@ -54,10 +47,10 @@
         flex-wrap: wrap;
 
         .week{
-          display: flex;
-          align-items: center;
+          @include flexSet(row, center, center);
           width: 14.2%;
           height: 30px;
+          border-top:1px solid #e6e6e6;
           background-color:#f8f8f8;
         }
         .day{
