@@ -1,0 +1,94 @@
+@import '../../Styles/_variables.scss';
+
+.detailContainer{
+  width: 510px;
+
+  .detailContainer{
+    position: relative;
+    border:1px solid #d9d9d9;
+    background-color: rgb(255, 255, 255);
+    // box-shadow: 1px 2px 1px rgb(0 0 0 / 10%);
+
+    .detailBox{
+      padding: 0 0 20px;
+
+      header{
+        position: relative;
+        padding-left: 18px;
+        border-bottom: 1px solid #e6e6e6;
+
+        h4{
+          @include flexSet(row, space-between, center);
+          overflow: hidden;
+          margin-right: 20px;
+          padding: 16px 0 11px;
+          font-size: 14px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          .addText{
+            text-decoration: none;
+            color: #333;
+          }
+
+          button{
+            border:none;
+          }
+        }
+      }
+
+      .contentContainer{
+        padding: 0 18px;
+
+        .contentWrapper{
+          position: relative;
+          margin: 12px 0 0 0;
+
+          dt{
+            position: absolute;
+            min-width: 36px;
+            margin-top: 4px;
+            color: #999;
+            line-height: 22px;
+          }
+
+          .dateContainer{
+            padding: 8px 0 6px 42px;
+            line-height: 14px;
+            vertical-align: top;
+            color: #222;
+
+            span{
+              line-height: 14px;
+              color: #222;
+            }
+          }
+
+          .infoContent, .memoContainer {
+            overflow: auto;
+            max-height: 136px;
+            line-height: 15px;
+          }
+
+          .infoContent{
+            span{
+              line-height: 14px;
+              color: #222;
+            }
+          }
+        }
+      }
+
+      .footerContainer{
+        margin: 0 18px;
+        padding-top: 11px;
+        text-align: center;
+
+        strong{
+          padding: 0 13px;
+          margin: 0 -13px;
+        }
+      }
+    }
+  }
+}
