@@ -6,7 +6,15 @@
     "python.linting.pylintPath": "/Users/ljm/miniconda3/bin/pylint",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+    "python.linting.pylintArgs": [
+        "--load-plugins", 
+        "pylint_django",
+        "--disable",
+        "django-not-configured",
+        "--help-msg",
+        "django-not-configured",
+        "--erros-only"
+    ],
     "html.validate.scripts": false,
     "html.validate.styles": false,
     "editor.tabSize": 4,

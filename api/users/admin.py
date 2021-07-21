@@ -1,3 +1,2 @@
+from re import U
 from django.contrib import admin
-
-# Register your models here.
