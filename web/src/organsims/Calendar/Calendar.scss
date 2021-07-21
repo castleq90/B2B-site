@@ -21,25 +21,30 @@
       min-width: 749px;
 
       .contentTop{
-        margin: 24px 0;
+        margin: 11px 0;
 
         i{
           margin:0 10px;
+          color:#034C8C;
         }
 
         .arrowButton{
           display:inline-block;
         }
+
+        img{
+          color:#034C8C;
+          margin:-4px 10px;
+          cursor: pointer;
+        }
   
         .dateText{
           display:inline-block;
           font-weight: bold;
-          font-size: 18px;
-        }
-
-        .fas{
+          font-size: 24px;
           color:#034C8C;
         }
+
       }
 
       .calendarBody{
@@ -59,6 +64,22 @@
           padding:9px;
           border: 1px solid #e6e6e6;
           cursor: pointer;
+
+          .dayText{
+            font-size:15px;
+            font-weight:600;
+          }
+
+          .timeText, .titleText{
+            font-size:13px;
+            margin-top:3px;
+          }
+
+          .titleText{
+            margin-left:3px;
+            font-weight:600;
+            text-overflow:ellipsis;
+          }
         }
       }
 

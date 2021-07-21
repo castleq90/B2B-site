@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <div className="contactContainer">
       <div className="contactHeader">
-        <span>연락처</span>
+          <span>연락처</span>
         <i className="fas fa-plus"/>
       </div>
       <div className="contactSearch">

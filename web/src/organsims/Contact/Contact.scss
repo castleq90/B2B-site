@@ -9,13 +9,16 @@
   .contactHeader{
     @include flexSet(row, center, center);
     padding-top:30px;
-    span{
-      font-size:20px;
-      font-weight: bold;
-    }
+
+      span{
+        font-size:20px;
+        font-weight: bold;
+      }
+
     i{
       margin-left:10px;
       color: #034C8C;
+      cursor: pointer;
     }
   }
 
@@ -65,7 +68,7 @@
     text-align:center;
     margin-top:20px;
     overflow:scroll;
-    height:650px;
+    height:654px;
 
     .infoWrapper{
       padding:20px 0;
