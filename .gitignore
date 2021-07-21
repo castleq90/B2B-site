@@ -1,2 +1,5 @@
 **/node_modules
 **/settings.json
+
+**/db.sqlite3
+**/b2tech-db.sqbpro
