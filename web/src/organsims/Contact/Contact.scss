@@ -1,0 +1,88 @@
+@import '../../Styles/_variables.scss';
+
+.contactContainer{
+  height:100%;
+  border-color: #b4b4b4;
+  width:280px;
+  border-right: 1px solid #31333b;
+
+  .contactHeader{
+    @include flexSet(row, center, center);
+    padding-top:30px;
+
+      span{
+        font-size:20px;
+        font-weight: bold;
+      }
+
+    i{
+      margin-left:10px;
+      color: #034C8C;
+      cursor: pointer;
+    }
+  }
+
+  .contactSearch{
+    position: relative;
+    margin-top: 15px;
+
+    input{
+      display:inline-block;
+      margin-left:18px;
+      width:240px;
+      height: 30px;
+      border:1px solid #dbdbdb;
+      border-radius: 8px;
+      outline: none;
+
+      &::placeholder {
+        text-align: center;
+        color: #c7c7c7;
+      }
+    }
+
+    i {
+      position: absolute;
+      left: 90px;
+      margin-left:18px;
+      color: #c7c8c9;
+      font-size: 13px;
+      top:9px;
+    }
+
+    &:focus-within {
+      input {
+        padding-left: 25px;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+      i {
+        left: 8px;
+      }
+    }
+  }
+
+  .contactInfo{
+    text-align:center;
+    margin-top:20px;
+    overflow:scroll;
+    height:654px;
+
+    .infoWrapper{
+      padding:20px 0;
+      border-bottom:1px solid #dbdbdb;
+      border-top:1px solid #dbdbdb;
+
+      .name{
+        margin-bottom: 9px;
+        font-size:20px;
+        font-weight: bold;
+      }
+      .phoneNumber{
+        font-size:20px;
+      }
+    }
+  }
+}

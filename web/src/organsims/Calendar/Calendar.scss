@@ -1,0 +1,88 @@
+@import '../../Styles/_variables.scss';
+
+.calendarContainer{
+  .scrollContainer{
+    position:absolute;
+    margin-left:0;
+    left: 287px;
+    right:0;
+    top: 55px;
+    bottom:0;
+    overflow-y:hidden;
+    overflow-x:auto;
+
+    .content{
+      position:absolute;
+      overflow:hidden;
+      top: 0;
+      bottom:0;
+      left: 0;
+      right: 0;
+      min-width: 749px;
+
+      .contentTop{
+        margin: 11px 0;
+
+        i{
+          margin:0 10px;
+          color:#034C8C;
+        }
+
+        .arrowButton{
+          display:inline-block;
+        }
+
+        img{
+          color:#034C8C;
+          margin:-4px 10px;
+          cursor: pointer;
+        }
+  
+        .dateText{
+          display:inline-block;
+          font-weight: bold;
+          font-size: 24px;
+          color:#034C8C;
+        }
+
+      }
+
+      .calendarBody{
+        display: flex;
+        flex-wrap: wrap;
+
+        .week{
+          @include flexSet(row, center, center);
+          width: 14.2%;
+          height: 30px;
+          border-top:1px solid #e6e6e6;
+          background-color:#f8f8f8;
+        }
+        .day{
+          width: 14.2%;
+          height: 110px;
+          padding:9px;
+          border: 1px solid #e6e6e6;
+          cursor: pointer;
+
+          .dayText{
+            font-size:15px;
+            font-weight:600;
+          }
+
+          .timeText, .titleText{
+            font-size:13px;
+            margin-top:3px;
+          }
+
+          .titleText{
+            margin-left:3px;
+            font-weight:600;
+            text-overflow:ellipsis;
+          }
+        }
+      }
+
+    }
+  }
+}
