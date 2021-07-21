@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-from .my_settings import SECRET_KEY, DATABASES
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY
+SECRET_KEY = 'bdf)aw3l3rxf-$#$b3^fbzly(^=s^nbu&f@1zmc)x^okv!yahf'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,11 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
     'corsheaders',
-    
+
+    'users',
     'contacts',
     'schedules',
-    'users',
 ]
 
 MIDDLEWARE = [
@@ -76,13 +84,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'api.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-DATABASES = DATABASES
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
