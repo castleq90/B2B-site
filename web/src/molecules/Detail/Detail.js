@@ -36,7 +36,7 @@ export default function Detail(props) {
                 <div className="memoContent">
                   "설명이다"
                   <br/>
-                  "라라ㅏ라ㅏ랄"
+                  "설명이다2라라라라라"
                 </div>
               </dd>
             </div>

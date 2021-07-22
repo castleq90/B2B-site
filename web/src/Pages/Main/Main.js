@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import Navbar from '../../organsims/Navbar/Navbar'
-import Calendar from '../../organsims/Calendar/Calendar'
-import Modal from '../../organsims/Modal/Modal'
+import Navbar from '../../organisms/Navbar/Navbar';
+import Calendar from '../../organisms/Calendar/Calendar';
+import Modal from '../../organisms/Modal/Modal';
 import Detail from '../../molecules/Detail/Detail'
+import Contact from '../../organisms/Contact/Contact';
 
 export default function Main() {
   
@@ -15,6 +16,7 @@ export default function Main() {
     <div>
       <Navbar/>
       <Calendar handleDetail ={ handleDetail }/>
+      <Contact />
       {detailOn &&(
       <Modal>
         <Detail toClose={handleDetail}/>
