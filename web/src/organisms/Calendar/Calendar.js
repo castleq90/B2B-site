@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Contact from '../Contact/Contact';
+// import Contact from '../Contact/Contact';
 import './Calendar.scss';
 
 export default function Calendar(props) {
@@ -75,7 +75,7 @@ export default function Calendar(props) {
 
   return (
       <div className="calendarContainer">
-        <Contact/>
+        {/* <Contact/> */}
         <div className="scrollContainer">
           <div className="content">
             <div className="contentTop">

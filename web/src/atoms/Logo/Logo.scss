@@ -1,0 +1,9 @@
+@import '../../Styles/_variables.scss';
+
+.LogoText{
+  @include flexSet(row, center, center);
+  margin-bottom: 30px;
+  color:#034C8C;
+  font-family: 'Black Ops One', cursive;
+  font-size: 80px;
+}
