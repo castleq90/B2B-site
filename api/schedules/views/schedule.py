@@ -7,5 +7,3 @@ from ..serializer      import ScheduleSerializer
 class ScheduleViewSet(viewsets.ModelViewSet):
     queryset = Schedule.objects.all()
     serializer_class = ScheduleSerializer
-    
-    # response = Response(serializer_class.data)
