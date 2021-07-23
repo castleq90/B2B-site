@@ -46,9 +46,7 @@ export default function Join() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body:JSON.stringify({
-        inputValue,
-      }),
+      body:JSON.stringify(inputValue),
     })
     .then(res => res.json())
     .then(data => {
