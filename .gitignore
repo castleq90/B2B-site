@@ -1,13 +1,4 @@
 **/node_modules
 **/settings.json
-<<<<<<< HEAD
 **/.DS_Store
-=======
-<<<<<<< HEAD
 **/db.sqlite3
-=======
-
-**/db.sqlite3
-**/b2tech-db.sqbpro
->>>>>>> 61553d83d86ea8a2d86101ab3829375f0f1f8c63
->>>>>>> backend
