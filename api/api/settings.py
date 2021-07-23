@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     'corsheaders',
     
     'rest_framework',
-    'rest_framework.authtoken',
     'django_extensions',
+    'knox',
 
     'api',
     'contacts',
@@ -68,22 +68,11 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = "users.User"
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-        'rest_framework.permissions.IsAdminUser',
-        'rest_framework.permissions.AllowAny',
-        ),
-    'DEFAULT_RENDERER_CLASSES': (
-        # 자동으로 json으로 바꿔줌
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        # 'rest_framework.authentication.TokenAuthentication',
-        # 'rest_framework.authentication.SessionAuthentication',
         # 'rest_framework.authentication.BasicAuthentication',
-    ),
+        # 'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
+    )
 }
 
 JWT_AUTH = {
