@@ -46,7 +46,7 @@ export default function Detail(props) {
               <strong>삭제</strong>
             </Button>
             <Button>
-              수정
+              <span>수정</span>
             </Button>
           </div>
         </div>

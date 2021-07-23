@@ -19,42 +19,19 @@
                 font-weight: bold;
             }
         }
-        main{
-            p{
-                margin-top:8px;
-                margin-bottom:5px;
-            }
-            input{
-                width: 200px;
-                height: 30px;
-                margin-bottom:5px;
-                padding: 7px;
-            }
-            .textAlert{
-                margin-top:4px;
-                color: red;
-                font-size: 14px;
-            }
-        }
+
         .buttonContainer{
             @include flexSet(row, center, center);
-            button{
-                border:none;
-                border-radius: 15px;
-                width: 200px;
-                height: 40px;
-                margin:20px 0;
-                font-size: 17px;
-                background-color:#034C8C;
-                color:white;
-                cursor:pointer;
+        }
 
+        .onlineAccount{
+            @include flexSet(row, center, center);
+            .loginLink{
+                text-decoration: none;
+                color: #034C8C;
+                font-weight: bold;
             }
         }
-        .loginLink{
-            text-decoration: none;
-            color: #034C8C;
-            font-weight: bold;
-        }
+        
     }
 }
