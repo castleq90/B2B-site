@@ -41,7 +41,7 @@ export default function Join() {
 
 
   const handleJoin = () =>{
-    fetch('http://0.0.0.0:8000/users/signup/',{
+    fetch('http://localhost:8000/users/signup/',{
       method:'POST',
       headers: {
         'Content-Type': 'application/json',

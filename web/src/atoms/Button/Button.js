@@ -1,9 +1,9 @@
 import React from 'react'
 import './Button.scss'
-export default function Button(props) {
+export default function Button({children}) {
   return (
     <button>
-      {props.children}
+      {children}
     </button>
   )
 }
