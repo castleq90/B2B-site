@@ -12,12 +12,12 @@ export default function Detail(props) {
             <h4>
               <Link to ="#" className="addText">추가</Link>
               <button onClick={props.toClose}>
-                <i className="fas fa-times"/>
+                <i className="fas fa-times fa-lg"/>
               </button>
             </h4>
           </header>
           <div className="contentContainer">
-            <div classname="contentWrapper">
+            <div className="contentWrapper">
               <dt>일시</dt>
               <dd className="dateContainer">
                 <span className="dateSpace">
