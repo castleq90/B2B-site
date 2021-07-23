@@ -14,14 +14,14 @@ export default function Main() {
   }  
   return (
     <div>
-      {/* <Navbar/>
+      <Navbar/>
       <Calendar handleDetail ={ handleDetail }/>
       <Contact />
       {detailOn &&(
       <Modal>
         <Detail toClose={handleDetail}/>
       </Modal>
-      )} */}
+      )}
     </div>
   )
 }
