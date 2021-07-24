@@ -75,7 +75,6 @@ export default function Calendar(props) {
 
   return (
       <div className="calendarContainer">
-        {/* <Contact/> */}
         <div className="scrollContainer">
           <div className="content">
             <div className="contentTop">
