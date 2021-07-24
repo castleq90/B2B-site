@@ -2,7 +2,7 @@ import React from 'react'
 import './Button.scss'
 export default function Button({children}) {
   return (
-    <button>
+    <button className="modalButton">
       {children}
     </button>
   )
