@@ -27,7 +27,7 @@ export default function Add() {
           <div className="scheduleHeader">
             <div className="buttonHeader">
               <button>
-                <stron>저장</stron>
+                <strong>저장</strong>
               </button>
               <button>일정 삭제</button>
             </div>
@@ -51,7 +51,7 @@ export default function Add() {
               <div className="clientSection">
                 <div className="clientArea">
                   <span>고객</span>
-                  <div classname="cont">
+                  <div className="cont">
                     <input type="text" placeholder="이름"/>
                     <input type="text" placeholder="회사"/>
                     <input type="text" placeholder="부서명"/>
@@ -59,9 +59,11 @@ export default function Add() {
                 </div>
               </div>
               <div className="commentSection">
-                <span>메모</span>
-                <div className="commentcont">
-                  <textarea placeholder="필요한 메모를 입력하세요"/>
+                <div className="commentArea">
+                  <span>메모</span>
+                  <div className="cont">
+                    <textarea placeholder="필요한 메모를 입력하세요"/>
+                  </div>
                 </div>
               </div>
               <div className="buttonFooter">
