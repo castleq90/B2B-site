@@ -1,0 +1,30 @@
+.allSection{
+    .scheduleSection{
+        position:absolute;
+        margin-left:0;
+        left: 300px;
+        right: 0;
+        top: 112px;
+        bottom:0;
+
+        .scheduleHeader{
+            border-bottom: 1px solid #d9d9d9;
+            
+            .buttonHeader{
+                position: relative;
+                width: 720px;
+                min-height: 21px;
+                padding: 7px 0 12px 14px;
+
+                button{
+                    padding: 4px 7px 2px;
+                    height:28px;
+                    width:59px;
+                    background-color: #f8f8f8;
+                    color:#222;
+                    
+                }
+            }
+        }
+    }
+}
