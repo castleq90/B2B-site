@@ -37,7 +37,7 @@ export default function Calendar(props) {
   }, [date]);
 
   function getStartDayOfMonth() {
-    return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+    return new Date(date.getFullYear(), date.getMonth()).getDay();
   }
   function isLeapYear() {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
@@ -56,6 +56,10 @@ export default function Calendar(props) {
 
   const TEXT = [
     {
+      date:"",
+      title:""
+    },
+    {
       date:"2021-07-02T07:05:00",
       title:"오후 미팅"
     },
@@ -68,7 +72,7 @@ export default function Calendar(props) {
       title:"데일리 미팅"
     },
     {
-      date:"2021-07-04T07:40:00",
+      date:"2021-07-07T07:40:00",
       title:"데일리 미팅2"
     },
   ]
@@ -95,29 +99,40 @@ export default function Calendar(props) {
               <strong>{d}</strong>
               </div>
             ))}
-            {Array(days[month] + (fixStartDay))
+            {Array(42)
             .fill(null)
-            .map((_, index) => {
-            const d = index - (fixStartDay -1);
-            return (
-              <div className="day"
-                key={index}
+            .map((_, i) => {
+            const d = i - (fixStartDay -1);
+            if(i > days[month] + (fixStartDay-1)){
+              return (
+                <div className="day" style={{ display: i >= days[month]+ (fixStartDay -1)+(7- ((days[month]+(fixStartDay -1))%7))
+                  ?'none'
+                  :null,
+                  }}></div>
+              )};
+              return(
+                <div className="day"
+                key={i}
               >
                 <p class="dayText">{d > 0 ? d : ''}</p>
+            
+            
               {TEXT.map((item,index)=>{
-                const split = parseInt(item.date.substr(9,1))
-                const time = item.date.substr(11,5)
-                const monthNum = parseInt(item.date.substr(6,1))
+                const split = parseInt(item.date.substr(9,1));
+                const time = item.date.substr(11,5);
+                const monthNum = parseInt(item.date.substr(6,1));
                 return(
-                  <div>
-                  <span key={index} className="timeText" >{d===split&&(month+1)===monthNum ? time : ''}</span>
+                  <div key={index}>
+                  <span  className="timeText" >{d===split&&(month+1)===monthNum ? time : ''}</span>
                   <p className="titleText" onClick={props.handleDetail}>{d===split&&(month+1)===monthNum ? item.title : ''}</p>
                   </div>
                 )
               })}
               </div>
-            );
-          })}
+              )
+             
+            
+            })}
             </div>
           </div>
         </div>
