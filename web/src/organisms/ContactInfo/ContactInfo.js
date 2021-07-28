@@ -7,18 +7,18 @@ export default function ContactInfo({pathNumber,toClose}) {
   const [detail,setDetail] = useState([])
   
 
-  useEffect(() => {
-    fetch('/data/mock.json')
-    .then(res=>res.json())
-    .then(data=>setDetail(data))
-  },[])
-
-  //실제 통신용
-  // useEffect(()=>{
-  //   fetch(`url/${pathNumber}`)
-      // .then(res=>res.json())
-      // .then(data=>setDetail(data))
+  // useEffect(() => {
+  //   fetch('/data/mock.json')
+  //   .then(res=>res.json())
+  //   .then(data=>setDetail(data))
   // },[])
+
+  
+  useEffect(()=>{
+    fetch(`http://127.0.0.1:8000/contacts/${pathNumber}`)
+      .then(res=>res.json())
+      .then(data=>setDetail(data))
+  },[])
 
 
   return (

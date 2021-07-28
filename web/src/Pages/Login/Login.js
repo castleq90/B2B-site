@@ -31,7 +31,7 @@ const handlePasswordInput = e=>{
     setPasswordValue(e.target.value);
 }
   const handleLogin = async () => {
-    let response = await fetch(API,{
+    let response = await fetch('http://localhost:8000/users/signin/',{
       method:'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -24,13 +24,14 @@ const handleInfo = (e) => {
 
 
 useEffect(()=>{
-  fetch('/data/mock.json')
+  fetch('http://127.0.0.1:8000/contacts/'
+    )
   .then(res=> res.json())
   .then(data=> setFilterItem(data))
 },[])
 
   useEffect(() => {
-    fetch('/data/mock.json')
+    fetch('http://127.0.0.1:8000/contacts/')
     .then(res=>res.json())
     .then(data=>setContact(data))
     
@@ -39,15 +40,14 @@ useEffect(()=>{
 
 
 
-  // 데이터 추가 후 포스트
-  // useEffect(()=>{
-  //   fetch( url 쓸 것, {
-  //     body:{
-  //       "contact": contact
-  //     },
-  //     method: 'POST'
-  //   })
-  // },[contact])
+  useEffect(()=>{
+    fetch('http://127.0.0.1:8000/contacts/' , {
+      body:{
+        "contact": contact
+      },
+      method: 'POST'
+    })
+  },[contact])
 
   const deleteContact = (id) =>{
 
