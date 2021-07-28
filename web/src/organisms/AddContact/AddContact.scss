@@ -1,0 +1,94 @@
+@import '../../Styles/_variables.scss';
+
+.addContainer{
+  display:table-cell;
+  border:1px solid #d9d9d9;
+  background-color: rgb(255, 255, 255);
+
+  .addWrapper{
+    padding: 0 0 20px;
+
+    header{
+      padding-left: 18px;
+      border-bottom: 1px solid #e6e6e6;
+
+      h4{
+        @include flexSet(row, space-between, center);
+        overflow: hidden;
+        margin-right: 20px;
+        padding: 16px 0 11px;
+        font-size: 14px;
+        
+        span{
+          font-size:20px;
+          font-weight: bold;
+          color: $main-color;
+        }
+
+        button{
+          border:none;
+          background-color: inherit;
+          color:#d9d9d9;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .clientContainer{
+      padding: 0 18px;
+
+      .clientWrapper{
+        position: relative;
+        margin: 12px 0 0 0;
+
+        input{
+          border:none;
+          padding:5px 0;
+        }
+
+        textarea{
+          border:none;
+        }
+
+        dt{
+          position: absolute;
+          min-width: 36px;
+          margin-top: 15px;
+          color: #999;
+          line-height: 22px;
+        }
+
+        .nameContainer, .positionContainer, .noteContainer{
+          padding: 13px 0 6px 55px;
+          line-height: 14px;
+          vertical-align: top;
+          color: #222;
+        }
+
+        .numberContainer{
+          padding: 13px 0 6px 85px;
+        }
+
+        .emailContainer, .companyContainer,.departmentContainer{
+          padding: 13px 0 6px 60px;
+        }
+
+        .noteContainer{
+          padding: 13px 0 6px 42px;
+          
+        }
+      }
+    }
+    .saveContainer{
+      margin: 13px;
+      padding-top: 11px;
+      text-align: center;
+
+      span{
+        padding: 0 13px;
+        margin: 0 -13px;
+      }
+    }
+
+  }
+}

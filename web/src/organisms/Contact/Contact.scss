@@ -1,10 +1,10 @@
 @import '../../Styles/_variables.scss';
 
 .contactContainer{
-  height:100%;
+  height:80vh;
   border-color: #b4b4b4;
   width:280px;
-  border-right: 1px solid #31333b;
+ 
 
   .contactHeader{
     @include flexSet(row, center, center);
@@ -68,9 +68,11 @@
     text-align:center;
     margin-top:20px;
     overflow:scroll;
-    height:654px;
+    height:100%;
+    cursor:pointer;
 
     .infoWrapper{
+      position:relative;
       padding:20px 0;
       border-bottom:1px solid #dbdbdb;
       border-top:1px solid #dbdbdb;
@@ -82,6 +84,17 @@
       }
       .phoneNumber{
         font-size:20px;
+      }
+
+      button{
+        position:absolute;
+        top: 10px;
+        right:15px;
+        border:none;
+        background-color: inherit;
+        font-size:20px;
+        color: #c7c7c7;
+        cursor: pointer;
       }
     }
   }

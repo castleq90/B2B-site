@@ -35,8 +35,12 @@ export default function Detail(props) {
               <dd className="memoContainer">
                 <div className="memoContent">
                   "설명이다"
-                  <br/>
+                  <br/><br/>
                   "설명이다2라라라라라"
+                  <br/><br/>
+                  "다음 설명은 무엇인가아아아"
+                  <br/><br/>
+                  "실험중인 설명들이다"
                 </div>
               </dd>
             </div>

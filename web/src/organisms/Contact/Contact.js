@@ -1,76 +1,101 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import AddContact from '../../organisms/AddContact/AddContact';
+import Modal from '../../organisms/Modal/Modal';
+import ContactInfo from '../../organisms/ContactInfo/ContactInfo'
 import './Contact.scss'
 
-const CONTACT = [
-  {
-    name: '오선주',
-    number: '01011113333'
-  },
-  {
-    name: '이정민',
-    number: '01022223333'
-  },
-  {
-    name: '김성규',
-    number: '01044443333'
-  },
-  {
-    name: '강준희',
-    number: '01012345670'
-  },
-  {
-    name: '김건우',
-    number: '01022345566'
-  },
-  {
-    name:'김지민',
-    number:'01022223342'
-  },
-  {
-    name:'이도윤',
-    number:'01012340987'
-  },
-  {
-    name:'한성봉',
-    number:'01098765432',
-  },
-  {
-    name:'배찬영',
-    number:'01046533243',
-  },
-  {
-    name:'최승리',
-    number:'01009877777'
-  }
-]
+export default function Contact(props) {
 
-export default function Contact() {
+const [contact, setContact] = useState([]);
+const [search, setSearch ] = useState('');
+const [filterItem, setFilterItem] = useState([]);
+const [ info, setInfo ] = useState(false)
+
+//id 값 저장 용 state 관리 나중에 바꿔도 됨
+const [pathNumber, setPathNumber] = useState();
+
+
+const handleInfo = (e) => {
+  setInfo(!info)
+  //id값 state에 저장 ->contactInfo로 props 전달
+  setPathNumber(e.target.value);
+}
+
+
+
+useEffect(()=>{
+  fetch('/data/mock.json')
+  .then(res=> res.json())
+  .then(data=> setFilterItem(data))
+},[])
+
+  useEffect(() => {
+    fetch('/data/mock.json')
+    .then(res=>res.json())
+    .then(data=>setContact(data))
+    
+    setFilterItem(contact.filter(object=> object.name.indexOf(search)!==-1))
+  }, [search])
+
+
+
+  // 데이터 추가 후 포스트
+  // useEffect(()=>{
+  //   fetch( url 쓸 것, {
+  //     body:{
+  //       "contact": contact
+  //     },
+  //     method: 'POST'
+  //   })
+  // },[contact])
+
+  const deleteContact = (id) =>{
+
+    setContact(contact.filter((a => a.id !== id)))
+
+  }
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  }
+
   return (
+    <>
     <div className="contactContainer">
       <div className="contactHeader">
           <span>연락처</span>
-        <i className="fas fa-plus"/>
+        <i className="fas fa-plus" onClick={props.handleContact}/>
       </div>
       <div className="contactSearch">
-        <input type="text" placeholder="검색"/>
+        <input type="text" placeholder="검색" value={search} onChange={handleSearch}/>
           <span>
             <i className="fas fa-search"/>
           </span>
       </div>
       <div className="contactInfo">
-        {CONTACT.map((person, index)=>{
-          return(
-            <div className="infoWrapper">
+        {filterItem?.map((person, index)=>{
+          return(                       
+            <div className="infoWrapper" value={person.id} onClick={handleInfo}>
               <p key={index} className="name">
                 {person.name}
               </p>
               <p className="phoneNumber">
                 {person.number}
               </p>
+              <button onClick={()=>deleteContact(person.id)} >X</button>
             </div>
           )
         })}
       </div>
-    </div>
+    </div> 
+    {props.addOn&&<Modal>
+      <AddContact toClose={props.handleContact} setContact={setContact} contact={contact}/>
+    </Modal>
+    }
+    {props.info&&<Modal>
+      <ContactInfo toClose={props.handleInfo} pathNumber={pathNumber}/> 
+      </Modal>
+    }             
+  </>
   )
 }
