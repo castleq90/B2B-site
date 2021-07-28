@@ -4,7 +4,7 @@ import './Input.scss'
 export default function Input({type,value,onChange,placeholder,name}) {
 
   return (
-    <input
+    <input className="commonInput"
     type={type}
     name={name}
     value={value}
