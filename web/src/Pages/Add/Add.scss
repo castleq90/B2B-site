@@ -1,0 +1,118 @@
+.allSection{
+    .scheduleSection{
+        position:absolute;
+        margin-left:0;
+        left: 281px;
+        right: 0;
+        top: 50px;
+        bottom:0;
+        border-left:1px solid #d9d9d9;
+        padding-top:50px;
+
+        .scheduleHeader{
+            border-bottom: 1px solid #d9d9d9;
+            
+            .buttonHeader{
+                position: relative;
+                width: 720px;
+                min-height: 21px;
+                padding: 7px 0 12px 14px;
+
+                button{
+                    margin:5px;
+                    padding: 4px 7px 2px;
+                    height:30px;
+                    width:68px;
+                    background-color: rgb(255, 254, 254);
+                    border:1px solid #d9d9d9;
+                    color:#222;
+                    font-size:13px;
+                    border-radius: 2px;
+
+                    strong{
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .scheduleWrap{
+            height:579px;
+            .scheduleCont{
+                padding: 0 23px 70px;
+
+                span{
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    color: #222;
+                    font-weight: bold;
+                }
+
+                .cont{
+                    position: relative;
+                    padding: 0 0 12px 52px;
+                }
+
+                input{
+                    text-indent: 7px;
+                    margin-bottom:9px;
+                }
+
+                .articleTitle,.articlePlace,.clientArea,.commentArea{
+                    position: relative;
+                }
+
+                .section{
+                    padding: 20px 0 2px 4px;
+                    border-bottom: 1px solid #f1f1f1;
+
+                    input{
+                        width:500px;
+                        height:24px;
+                    }
+
+                }
+
+                .clientSection{
+                    padding: 19px 0 10px 4px;
+                    border-bottom: 1px solid #f1f1f1;
+
+                    input{
+                        margin-right:10px;
+                        height:24px;
+                        width:160px;
+                    }
+                }
+
+                .commentSection{
+                    padding: 24px 0 2px 4px;
+                    textarea{
+                        height: 95px;
+                        width: 658px;
+                        padding: 5px 0 3px 7px;
+                        line-height: 17px;
+                        resize: none;
+                    }
+                }
+
+                .buttonFooter{
+                    margin: 3px 0 0;
+                    padding: 12px 0 0;
+                    border-top: 1px solid #f1f1f1;
+
+                    button{
+                        margin:5px;
+                        padding: 4px 7px 2px;
+                        height:30px;
+                        width:68px;
+                        background-color: rgb(255, 254, 254);
+                        border:1px solid #d9d9d9;
+                        color:#222;
+                        font-size:13px;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
