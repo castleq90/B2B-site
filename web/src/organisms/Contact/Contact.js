@@ -24,14 +24,15 @@ const handleInfo = (e) => {
 
 
 useEffect(()=>{
-  fetch('http://127.0.0.1:8000/contacts/'
+  fetch('http://127.0.0.1:8000/contact/'
     )
   .then(res=> res.json())
   .then(data=> setFilterItem(data))
+  .then(data=>console.log(data))
 },[])
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/contacts/')
+    fetch('http://127.0.0.1:8000/contact/')
     .then(res=>res.json())
     .then(data=>setContact(data))
     
@@ -41,10 +42,10 @@ useEffect(()=>{
 
 
   useEffect(()=>{
-    fetch('http://127.0.0.1:8000/contacts/' , {
-      body:{
-        "contact": contact
-      },
+    fetch('http://127.0.0.1:8000/contact/' , {
+      body:JSON.stringify({
+       contact
+      }),
       method: 'POST'
     })
   },[contact])
@@ -80,7 +81,7 @@ useEffect(()=>{
                 {person.name}
               </p>
               <p className="phoneNumber">
-                {person.number}
+                {person.phone_number}
               </p>
               <button onClick={()=>deleteContact(person.id)} >X</button>
             </div>

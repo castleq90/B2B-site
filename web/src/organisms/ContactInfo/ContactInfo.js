@@ -15,7 +15,7 @@ export default function ContactInfo({pathNumber,toClose}) {
 
   
   useEffect(()=>{
-    fetch(`http://127.0.0.1:8000/contacts/${pathNumber}`)
+    fetch(`http://127.0.0.1:8000/contact/${pathNumber}`)
       .then(res=>res.json())
       .then(data=>setDetail(data))
   },[])
