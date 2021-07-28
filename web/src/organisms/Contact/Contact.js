@@ -43,9 +43,15 @@ useEffect(()=>{
 
   useEffect(()=>{
     fetch('http://127.0.0.1:8000/contact/' , {
+<<<<<<< HEAD
       body:JSON.stringify({
        contact
       }),
+=======
+      body:{
+        "contact": contact
+      },
+>>>>>>> c816c48abe60ff3632a33bc08943ea8e0f90d8d5
       method: 'POST'
     })
   },[contact])

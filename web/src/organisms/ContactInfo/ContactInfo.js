@@ -36,31 +36,31 @@ export default function ContactInfo({pathNumber,toClose}) {
           <div className="clientWrapper">
             <dt>이름</dt>
             <dd className="nameContainer">
-              <span>이름</span>
+              <span>{detail.name}</span>
             </dd>
             <dt>휴대폰 번호</dt>
             <dd className="numberContainer">
-              <span>010-3333-2222</span>
+              <span>{detail.phone_number}</span>
             </dd>
             <dt>이메일</dt>
             <dd className="emailContainer">
-              <span>di@naver.com</span>
+              <span>{detail.email}</span>
             </dd>
             <dt>회사명</dt>
             <dd className="companyContainer">
-              <span>비투텍</span>
+              <span>{detail.company}</span>
             </dd>
             <dt>부서명</dt>
             <dd className="departmentContainer">
-              <span>영업관리</span>
+              <span>{detail.department}</span>
             </dd>
             <dt>직책</dt>
             <dd className="positionContainer">
-              <span>대리</span>
+              <span>{detail.responsibility}</span>
             </dd>
             <dt>메모</dt>
             <dd className="noteContainer">
-              <span>메모내용이다아앙아아아아</span>
+              <span>{detail.memo}</span>
             </dd>
           </div>
         </div>
