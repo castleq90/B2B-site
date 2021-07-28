@@ -34,7 +34,7 @@ export default function AddContact(props) {
         <header>
           <h4>
             <span>연락처 추가</span>
-            <button onClick={sendToContact}>
+            <button onClick={props.toClose}>
               <i className="fas fa-times fa-lg"/>
             </button>
           </h4>
