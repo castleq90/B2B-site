@@ -14,7 +14,7 @@ export default function InputForm(props) {
           value={props.passwordValue}
           onChange={props.handlePasswordInput}
           placeholder="Password"/>
-      <BlueButton className="blueButton" onClick={props.handleLogin} disabled={!props.validateInputData(idValue, passwordValue)}>Sign in</BlueButton>
+      <BlueButton className="blueButton" onClick={props.handleLogin} disabled={!props.validateInputData(props.idValue, props.passwordValue)}>Sign in</BlueButton>
     </>
   )
 }
