@@ -12,37 +12,31 @@ class ContactSerializer(serializers.ModelSerializer):
         # fields = ['name','phone_number','email','company','department','responsibility','memo']
 
 class ContactScheduleSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = ContactSchedule
-        fields = '__all__'
-        # fields = ['schedule','contact']
+        # fields = '__all__'
+        fields = ['schedule','contact']
     
+    def create(self, validated_data):
+        contact_data = validated_data.pop('contact')
+        contact = Contact.objects.create(**validated_data)
+        ContactSchedule.objects.create(contact=contact, schedule=validated_data['schedule'], **contact_data)
+        return contact
+
     def to_representation(self, instance):
         response = super().to_representation(instance)
         response['contact'] = ContactSerializer(instance.contact).data
         return response
         
 class ScheduleSerializer(serializers.ModelSerializer):
-    contactschedule = ContactScheduleSerializer(many=True, read_only=True, source="contactschedule_set")
+    contactschedules = ContactScheduleSerializer(many=True, source="contactschedule_set")
 
     class Meta:
         model = Schedule
-        fields = ['title','date','contactschedule']
+        fields = ['title','date','contactschedules']
 
     def create(self, validated_data):
-        contact_data = validated_data.pop('contactschedule')
+        contactschedules_data = validated_data.pop('contactschedule_set')
         schedule = Schedule.objects.create(**validated_data)
-        ContactSchedule.objects.create(schedule=schedule, **contact_data)
-        return schedule
-
-
-
-
-    # def create(self, validated_data):
-    #     contact_data = validated_data.pop('contactschedule')
-    #     schedule = Schedule.objects.create(**validated_data)
-    #     contact = ContactSerializer.objects.create(**validated_data)
-    #     ContactSchedule.objects.create(contact=contact, schedule=schedule, **contact_data)
-
-        # return schedule
+        for contactschedule_data in contactschedules_data:
+            ContactSchedule.objects.create(schedule=schedule, **contactschedule_data)
