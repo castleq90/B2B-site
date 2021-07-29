@@ -23,9 +23,9 @@ export default function Join() {
   const [numberValue, setNumberValue] = useState('')
 
   const handleValue = e =>{
-    const { name , value } = e.target
+    const { name , value } = e.target;
 
-    setInputValue({...inputValue, [name]:value})
+    setInputValue({...inputValue, [name]:value});
   }
 
   const handlePhoneNumber = e => {
@@ -47,8 +47,9 @@ export default function Join() {
         'Content-Type': 'application/json'
         //"Authorization":token 은 token가지고 확인하는 api에서 
       },
-      body:JSON.stringify(inputValue),
+      body:JSON.stringify({...inputValue,phone_number:numberValue}),
     });
+    
     if (response.ok) {
       let token = response.headers.get("Authorization");
       localStorage.setItem("token",token)
@@ -56,25 +57,6 @@ export default function Join() {
       history.push('/')
     }
     else {
-      // switch (response.status)
-      // {
-      //   case 400:
-      //   {
-      //     break;
-      //   }
-      //   case 401:
-      //   {
-      //     break;
-      //   }
-      //   case 500:
-      //   {
-      //     break;
-      //   }
-      //   case 503:
-      //   {
-      //     break;
-      //   }
-      // }
       alert("회원가입에 실패하셨습니다")
     }
   };

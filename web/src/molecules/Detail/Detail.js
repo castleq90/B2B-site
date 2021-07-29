@@ -21,8 +21,8 @@ export default function Detail(props) {
               <dt>일시</dt>
               <dd className="dateContainer">
                 <span className="dateSpace">
-                2021.07.08 
-                오전 11:00 - 오후 12:00 
+                2021.07.22
+                오전 10:30
                 </span>
               </dd>
               <dt>고객정보</dt>
@@ -34,13 +34,12 @@ export default function Detail(props) {
               <dt>메모</dt>
               <dd className="memoContainer">
                 <div className="memoContent">
-                  "설명이다"
+                  "농구를 좋아하는 사람이다"
                   <br/><br/>
-                  "설명이다2라라라라라"
+                  "장소는 위코드입니다"
                   <br/><br/>
-                  "다음 설명은 무엇인가아아아"
+                  "시간 약속을 잘 지켜야합니다"
                   <br/><br/>
-                  "실험중인 설명들이다"
                 </div>
               </dd>
             </div>

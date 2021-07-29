@@ -1,25 +1,18 @@
-import React, {useState, useEffect} from 'react'
-import Contact from '../Contact/Contact'
-import './ContactInfo.scss'
+import React, { useState, useEffect } from "react";
+import "./ContactInfo.scss";
 
-export default function ContactInfo({pathNumber,toClose}) {
- 
-  const [detail,setDetail] = useState([])
-  
-
-  // useEffect(() => {
-  //   fetch('/data/mock.json')
-  //   .then(res=>res.json())
-  //   .then(data=>setDetail(data))
-  // },[])
-
-  
-  useEffect(()=>{
-    fetch(`http://127.0.0.1:8000/contact/${pathNumber}`)
-      .then(res=>res.json())
-      .then(data=>setDetail(data))
-  },[])
-
+export default function ContactInfo({ detail, toClose, pageNum }) {
+  const deleteDetail = () => {
+    fetch(`http://0.0.0.0:8000/contact/${pageNum}`, {
+      headers: { "Content-Type": "application/json; charset=UTF-8" },
+      body: {
+        id: pageNum,
+      },
+      method: "DELETE",
+    }).then(() => {
+      toClose();
+    });
+  };
 
   return (
     <div className="addContainer">
@@ -28,7 +21,7 @@ export default function ContactInfo({pathNumber,toClose}) {
           <h4>
             <span>연락처 세부사항</span>
             <button onClick={toClose}>
-              <i className="fas fa-times fa-lg"/>
+              <i className="fas fa-times fa-lg" />
             </button>
           </h4>
         </header>
@@ -63,10 +56,11 @@ export default function ContactInfo({pathNumber,toClose}) {
               <span>{detail.memo}</span>
             </dd>
           </div>
+          <div>
+            <span onClick={deleteDetail}>삭제</span>
+          </div>
         </div>
       </div>
-
-      
     </div>
-  )
+  );
 }

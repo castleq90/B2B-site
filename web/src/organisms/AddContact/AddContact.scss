@@ -84,9 +84,17 @@
       padding-top: 11px;
       text-align: center;
 
-      span{
-        padding: 0 13px;
-        margin: 0 -13px;
+      .saveButton{
+        width: 50px;
+        height: 30px;
+        border: none;
+        color:white;
+        cursor:pointer;
+        background-color:$main-color;
+        span{
+          padding: 0 13px;
+          margin: 0 -13px;
+        } 
       }
     }
 
