@@ -6,5 +6,7 @@ from schedules.models.schedule import Schedule
 from schedules.serializer      import ContactScheduleSerializer, ScheduleSerializer
 
 class ScheduleViewSet(viewsets.ModelViewSet):
-    queryset = Schedule.objects.all()
+    queryset = ContactSchedule.objects.all()
     serializer_class = ContactScheduleSerializer
+    # queryset = Schedule.objects.all()
+    # serializer_class = ScheduleSerializer
