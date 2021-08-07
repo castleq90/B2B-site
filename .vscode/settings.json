@@ -1,9 +1,9 @@
 {
     "python.analysis.extraPaths": [
         "app",
-        "/Users/ljm/Desktop/b2h/b2tech-intern-21/api"
+        "/Users/castleq90/DEV/b2tech-intern-21"
     ],
-    "python.linting.pylintPath": "/Users/ljm/miniconda3/bin/pylint",
+    "python.linting.pylintPath": "/Users/castleq90/miniconda3/bin/pylint",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "python.linting.pylintArgs": [
