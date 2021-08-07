@@ -1,9 +1,12 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
+from contacts.models.contact_schedule import ContactSchedule
 
-from ..models.schedule import Schedule
-from ..serializer      import ScheduleSerializer
+from schedules.models.schedule import Schedule
+from schedules.serializer      import ContactScheduleSerializer, ScheduleSerializer
 
 class ScheduleViewSet(viewsets.ModelViewSet):
-    queryset = Schedule.objects.all()
-    serializer_class = ScheduleSerializer
+    queryset = ContactSchedule.objects.all()
+    serializer_class = ContactScheduleSerializer
+    # queryset = Schedule.objects.all()
+    # serializer_class = ScheduleSerializer
