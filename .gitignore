@@ -1,4 +1,5 @@
 **/node_modules
 **/settings.json
+**/launch.json
 **/.DS_Store
 **/db.sqlite3
